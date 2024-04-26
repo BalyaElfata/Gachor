@@ -11,6 +11,9 @@
 		21C8E6202BD8E70D00BE79BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E61F2BD8E70D00BE79BF /* ContentView.swift */; };
 		21C8E6222BD8E70F00BE79BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C8E6212BD8E70F00BE79BF /* Assets.xcassets */; };
 		21C8E6252BD8E70F00BE79BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C8E6242BD8E70F00BE79BF /* Preview Assets.xcassets */; };
+		21C8E6482BDB3DEA00BE79BF /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E6472BDB3DEA00BE79BF /* CustomARView.swift */; };
+		21C8E64A2BDB3E4100BE79BF /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21C8E6492BDB3E4100BE79BF /* info.plist */; };
+		21C8E64D2BDB850000BE79BF /* CustomARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E64C2BDB850000BE79BF /* CustomARViewRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		21C8E61F2BD8E70D00BE79BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		21C8E6212BD8E70F00BE79BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21C8E6242BD8E70F00BE79BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		21C8E6472BDB3DEA00BE79BF /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
+		21C8E6492BDB3E4100BE79BF /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		21C8E64C2BDB850000BE79BF /* CustomARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARViewRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 		21C8E6112BD8E70D00BE79BF = {
 			isa = PBXGroup;
 			children = (
+				21C8E64B2BDB821300BE79BF /* AR */,
 				21C8E61C2BD8E70D00BE79BF /* Gachor */,
 				21C8E61B2BD8E70D00BE79BF /* Products */,
 			);
@@ -52,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				21C8E61D2BD8E70D00BE79BF /* GachorApp.swift */,
-				21C8E61F2BD8E70D00BE79BF /* ContentView.swift */,
+				21C8E6492BDB3E4100BE79BF /* info.plist */,
 				21C8E6212BD8E70F00BE79BF /* Assets.xcassets */,
 				21C8E6232BD8E70F00BE79BF /* Preview Content */,
 			);
@@ -65,6 +72,16 @@
 				21C8E6242BD8E70F00BE79BF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		21C8E64B2BDB821300BE79BF /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				21C8E61F2BD8E70D00BE79BF /* ContentView.swift */,
+				21C8E6472BDB3DEA00BE79BF /* CustomARView.swift */,
+				21C8E64C2BDB850000BE79BF /* CustomARViewRepresentable.swift */,
+			);
+			path = AR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +144,7 @@
 			files = (
 				21C8E6252BD8E70F00BE79BF /* Preview Assets.xcassets in Resources */,
 				21C8E6222BD8E70F00BE79BF /* Assets.xcassets in Resources */,
+				21C8E64A2BDB3E4100BE79BF /* info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21C8E6482BDB3DEA00BE79BF /* CustomARView.swift in Sources */,
 				21C8E6202BD8E70D00BE79BF /* ContentView.swift in Sources */,
 				21C8E61E2BD8E70D00BE79BF /* GachorApp.swift in Sources */,
+				21C8E64D2BDB850000BE79BF /* CustomARViewRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +295,7 @@
 				DEVELOPMENT_TEAM = H3779UJ6B2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to show AR View.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +325,7 @@
 				DEVELOPMENT_TEAM = H3779UJ6B2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to show AR View.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
