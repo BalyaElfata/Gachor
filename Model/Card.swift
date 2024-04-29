@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-//@Model // This is Macro
+@Model
 class CardModel: Identifiable{
     var id = UUID()
     var name: String? = ""

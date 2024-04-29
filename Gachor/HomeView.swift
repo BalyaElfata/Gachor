@@ -41,7 +41,7 @@ struct HomeView: View {
                     //                .padding(.vertical)
                         .frame(width: 125, height: 68)
                         .cornerRadius(12)
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.blue)
                     
                     Image(systemName: "camera.fill")
                         .resizable()
