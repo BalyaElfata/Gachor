@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2128880A2BE0007B005CE39B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212888092BE0007B005CE39B /* CardView.swift */; };
 		21C8E61E2BD8E70D00BE79BF /* GachorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E61D2BD8E70D00BE79BF /* GachorApp.swift */; };
 		21C8E6202BD8E70D00BE79BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E61F2BD8E70D00BE79BF /* ContentView.swift */; };
 		21C8E6222BD8E70F00BE79BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C8E6212BD8E70F00BE79BF /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		212888092BE0007B005CE39B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		21C8E61A2BD8E70D00BE79BF /* Gachor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gachor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C8E61D2BD8E70D00BE79BF /* GachorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GachorApp.swift; sourceTree = "<group>"; };
 		21C8E61F2BD8E70D00BE79BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,8 +70,9 @@
 			isa = PBXGroup;
 			children = (
 				21C8E61D2BD8E70D00BE79BF /* GachorApp.swift */,
-				21C8E6542BDD516200BE79BF /* HomeView.swift */,
+				212888092BE0007B005CE39B /* CardView.swift */,
 				21C8E6562BDE699B00BE79BF /* CardCollectionView.swift */,
+				21C8E6542BDD516200BE79BF /* HomeView.swift */,
 				21C8E6212BD8E70F00BE79BF /* Assets.xcassets */,
 				21C8E6232BD8E70F00BE79BF /* Preview Content */,
 			);
@@ -178,6 +181,7 @@
 				21C8E6592BDE712400BE79BF /* Card.swift in Sources */,
 				21C8E6532BDD4FEC00BE79BF /* CustomARViewRepresentable.swift in Sources */,
 				21C8E6482BDB3DEA00BE79BF /* CustomARView.swift in Sources */,
+				2128880A2BE0007B005CE39B /* CardView.swift in Sources */,
 				21C8E6202BD8E70D00BE79BF /* ContentView.swift in Sources */,
 				21C8E6572BDE699B00BE79BF /* CardCollectionView.swift in Sources */,
 				21C8E61E2BD8E70D00BE79BF /* GachorApp.swift in Sources */,

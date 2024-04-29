@@ -8,6 +8,8 @@ struct ARViewContainer: UIViewRepresentable {
 
         var myMaterial = PhysicallyBasedMaterial()
         
+        var _: CardModel
+
         if let baseResource = try? TextureResource.load(named: "khoi") {
             // Create a material parameter and assign it.
             let baseColor = MaterialParameters.Texture(baseResource)

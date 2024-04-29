@@ -15,11 +15,11 @@ import AVFoundation
 //}
 
 struct CardCollectionView: View {
-    //    let data = (1...25).map { "Item \($0)" }
+//    let data = (1...25).map { "Item \($0)" }
     
-    //    var cards: CardModel
+//    var cards: CardModel
     
-//    let cardData = CardModel.getCardData()
+    let cardData = CardModel.getCardData()
     
     let columns = [
         GridItem(.flexible(minimum: 150, maximum: 180)),
@@ -29,33 +29,9 @@ struct CardCollectionView: View {
     var body: some View {
         ScrollView(.vertical){
             LazyVGrid(columns: columns, spacing: 16) {
-                Image("bully")
-                    .resizable()
-                    .frame(width: 171, height: 260)
-                    .scaledToFill()
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(.gray, lineWidth: 5)
-                    )
-                Image("bunny")
-                    .resizable()
-                    .frame(width: 180, height: 260)
-                    .scaledToFill()
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(.gray, lineWidth: 5)
-                    )
-                Image("gta")
-                    .resizable()
-                    .frame(width: 180, height: 260)
-                    .scaledToFill()
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(.gray, lineWidth: 5)
-                    )
+                ForEach(cardData) { card in
+                    CardView(card: card)
+                }
             }
         }
     }
