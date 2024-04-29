@@ -7,50 +7,77 @@
 
 import SwiftUI
 import AVFoundation
-struct HomePage: View {
+
+struct HomeView: View {
+    @State var isTapped = false
+    
     var body: some View {
-        // Logo
-        Circle()
-            .frame(width: 264)
-            .foregroundColor(.gray)
-            .padding(.top, 128)
-            .onTapGesture {
-                AudioServicesPlaySystemSound(1026)
-            }
-        
-        //Play Button
-        ZStack {
-            Rectangle()
-//                .padding(.vertical)
-                .frame(width: 125, height: 68)
-                .cornerRadius(12)
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-            
-            Image(systemName: "play.fill")
+        NavigationStack {
+            // Logo
+            Image("bully")
                 .resizable()
-                .frame(width: 32, height: 32)
-                .foregroundColor(.white)
-        }
-        .padding(.top, 20)
-        
-        Spacer()
-        
-        // Card Collection Button
-        HStack {
-            Spacer()
-            NavigationLink{
-                CardCollectionView()
+                .frame(width: 264, height: 264)
+                .scaledToFill()
+                .cornerRadius(246)
+                .padding(.top, 128)
+                .rotation3DEffect(
+                    Angle(
+                    degrees: self.isTapped ? 360 : 0),
+                    axis: (x: 0, y: self.isTapped ? 360 : 0, z: 0)
+                )
+                .onTapGesture {
+                    AudioServicesPlaySystemSound(1028)
+                    withAnimation(.easeInOut(duration: 1.7)) {isTapped.toggle()}
+                }
+                .sensoryFeedback(.success, trigger: isTapped)
+            
+            
+            //Play Button
+            NavigationLink {
+                ContentView()
             } label: {
-                Rectangle()
-                    .frame(width: 101, height: 107)
-                    .padding(.trailing, 16)
-                    .foregroundColor(.gray)
+                ZStack {
+                    Rectangle()
+                    //                .padding(.vertical)
+                        .frame(width: 125, height: 68)
+                        .cornerRadius(12)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    
+                    Image(systemName: "camera.fill")
+                        .resizable()
+                        .frame(width: 40, height: 32)
+                        .foregroundColor(.white)
+                }
+                .padding(.top, 20)
             }
             
+            Spacer()
+            
+            // Card Collection Button
+            HStack {
+                Spacer()
+                NavigationLink{
+                    CardCollectionView()
+                } label: {
+                    Rectangle()
+                        .frame(width: 101, height: 107)
+                        .padding(.trailing, 16)
+                        .foregroundColor(.gray)
+                }
+            }
+        }
+        .onAppear() {
+            AudioServicesPlaySystemSound(1027)
         }
     }
+//    func backgroundMusic() {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+//            AudioServicesPlaySystemSound(1027)
+//            backgroundMusic()
+//        }
+//    }
 }
 
 #Preview {
-    HomePage()
+    HomeView()
 }

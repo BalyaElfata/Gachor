@@ -12,8 +12,12 @@
 		21C8E6222BD8E70F00BE79BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C8E6212BD8E70F00BE79BF /* Assets.xcassets */; };
 		21C8E6252BD8E70F00BE79BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C8E6242BD8E70F00BE79BF /* Preview Assets.xcassets */; };
 		21C8E6482BDB3DEA00BE79BF /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E6472BDB3DEA00BE79BF /* CustomARView.swift */; };
-		21C8E64A2BDB3E4100BE79BF /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21C8E6492BDB3E4100BE79BF /* info.plist */; };
-		21C8E64D2BDB850000BE79BF /* CustomARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E64C2BDB850000BE79BF /* CustomARViewRepresentable.swift */; };
+		21C8E64F2BDD461800BE79BF /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E64E2BDD461800BE79BF /* ARViewContainer.swift */; };
+		21C8E6512BDD4F5600BE79BF /* ARAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E6502BDD4F5600BE79BF /* ARAction.swift */; };
+		21C8E6532BDD4FEC00BE79BF /* CustomARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E6522BDD4FEC00BE79BF /* CustomARViewRepresentable.swift */; };
+		21C8E6552BDD516200BE79BF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E6542BDD516200BE79BF /* HomeView.swift */; };
+		21C8E6572BDE699B00BE79BF /* CardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E6562BDE699B00BE79BF /* CardCollectionView.swift */; };
+		21C8E6592BDE712400BE79BF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E6582BDE712400BE79BF /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +27,12 @@
 		21C8E6212BD8E70F00BE79BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21C8E6242BD8E70F00BE79BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		21C8E6472BDB3DEA00BE79BF /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
-		21C8E6492BDB3E4100BE79BF /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
-		21C8E64C2BDB850000BE79BF /* CustomARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARViewRepresentable.swift; sourceTree = "<group>"; };
+		21C8E64E2BDD461800BE79BF /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		21C8E6502BDD4F5600BE79BF /* ARAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARAction.swift; sourceTree = "<group>"; };
+		21C8E6522BDD4FEC00BE79BF /* CustomARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARViewRepresentable.swift; sourceTree = "<group>"; };
+		21C8E6542BDD516200BE79BF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		21C8E6562BDE699B00BE79BF /* CardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionView.swift; sourceTree = "<group>"; };
+		21C8E6582BDE712400BE79BF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				21C8E64B2BDB821300BE79BF /* AR */,
+				21C8E65A2BDE714B00BE79BF /* Model */,
 				21C8E61C2BD8E70D00BE79BF /* Gachor */,
 				21C8E61B2BD8E70D00BE79BF /* Products */,
 			);
@@ -59,7 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				21C8E61D2BD8E70D00BE79BF /* GachorApp.swift */,
-				21C8E6492BDB3E4100BE79BF /* info.plist */,
+				21C8E6542BDD516200BE79BF /* HomeView.swift */,
+				21C8E6562BDE699B00BE79BF /* CardCollectionView.swift */,
 				21C8E6212BD8E70F00BE79BF /* Assets.xcassets */,
 				21C8E6232BD8E70F00BE79BF /* Preview Content */,
 			);
@@ -77,11 +87,21 @@
 		21C8E64B2BDB821300BE79BF /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				21C8E6502BDD4F5600BE79BF /* ARAction.swift */,
 				21C8E61F2BD8E70D00BE79BF /* ContentView.swift */,
 				21C8E6472BDB3DEA00BE79BF /* CustomARView.swift */,
-				21C8E64C2BDB850000BE79BF /* CustomARViewRepresentable.swift */,
+				21C8E6522BDD4FEC00BE79BF /* CustomARViewRepresentable.swift */,
+				21C8E64E2BDD461800BE79BF /* ARViewContainer.swift */,
 			);
 			path = AR;
+			sourceTree = "<group>";
+		};
+		21C8E65A2BDE714B00BE79BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21C8E6582BDE712400BE79BF /* Card.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +164,6 @@
 			files = (
 				21C8E6252BD8E70F00BE79BF /* Preview Assets.xcassets in Resources */,
 				21C8E6222BD8E70F00BE79BF /* Assets.xcassets in Resources */,
-				21C8E64A2BDB3E4100BE79BF /* info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,10 +174,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21C8E6512BDD4F5600BE79BF /* ARAction.swift in Sources */,
+				21C8E6592BDE712400BE79BF /* Card.swift in Sources */,
+				21C8E6532BDD4FEC00BE79BF /* CustomARViewRepresentable.swift in Sources */,
 				21C8E6482BDB3DEA00BE79BF /* CustomARView.swift in Sources */,
 				21C8E6202BD8E70D00BE79BF /* ContentView.swift in Sources */,
+				21C8E6572BDE699B00BE79BF /* CardCollectionView.swift in Sources */,
 				21C8E61E2BD8E70D00BE79BF /* GachorApp.swift in Sources */,
-				21C8E64D2BDB850000BE79BF /* CustomARViewRepresentable.swift in Sources */,
+				21C8E6552BDD516200BE79BF /* HomeView.swift in Sources */,
+				21C8E64F2BDD461800BE79BF /* ARViewContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +319,7 @@
 				DEVELOPMENT_TEAM = H3779UJ6B2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to show AR View.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to use camera.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -325,7 +349,7 @@
 				DEVELOPMENT_TEAM = H3779UJ6B2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to show AR View.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to use camera.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

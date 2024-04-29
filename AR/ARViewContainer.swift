@@ -1,20 +1,12 @@
 import SwiftUI
 import RealityKit
 
-//struct CustomARViewRepresentable: UIViewRepresentable {
-//    func makeUIView(context: Context) -> some UIView {
-//        return CustomARView()
-//    }
-//
-//    func updateUIView(_ uiView: UIViewType, context: Context) { }
-//}
-
 struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
-        let entity = ModelEntity(mesh: .generateBox(size: 0.1))
+        let entity = ModelEntity(mesh: .generatePlane(width: 0.5, height: 1)) // add corner radius
         let anchor = AnchorEntity(.image(group: "AR Resources",
                                           name: "IMG_0596"))
         entity.setParent(anchor)

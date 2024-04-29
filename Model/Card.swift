@@ -8,20 +8,27 @@
 import Foundation
 import SwiftData
 
-@Model // This is Macro
-class PetModel: Identifiable{
+//@Model // This is Macro
+class CardModel: Identifiable{
     var id = UUID()
     var name: String? = ""
-    var breed: String? = ""
-    var weight: String? = ""
+    var role: String? = ""
+    var rarity: String? = ""
     var gender: String? = ""
     var imageName: String? = ""
     
-    init(id: UUID = UUID(), name: String, breed: String, weight: String, gender: String, imageName: String) {
+    init(id: UUID = UUID(), name: String, role: String, rarity: String, imageName: String) {
         self.name = name
-        self.breed = breed
-        self.weight = weight
-        self.gender = gender
+        self.role = role
+        self.rarity = rarity
         self.imageName = imageName
+    }
+    
+    static func getCardData() -> [CardModel] {
+        return [
+            CardModel(name: "Bunny", role: "Tech", rarity: "Rare", imageName: "bunny"),
+            CardModel(name: "GTA", role: "Tech", rarity: "Legendary", imageName: "gta"),
+            CardModel(name: "Bully", role: "Design", rarity: "Ultra Rare", imageName: "bully"),
+        ]
     }
 }
