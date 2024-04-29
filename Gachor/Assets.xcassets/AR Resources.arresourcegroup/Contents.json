@@ -5,7 +5,10 @@
   },
   "resources" : [
     {
-      "filename" : "IMG_0596.arreferenceimage"
+      "filename" : "pattern1.arreferenceimage"
+    },
+    {
+      "filename" : "pattern2.arreferenceimage"
     }
   ]
 }
