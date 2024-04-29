@@ -5,25 +5,27 @@ struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
-
-        var myMaterial = PhysicallyBasedMaterial()
         
-        var _: CardModel
-
-        if let baseResource = try? TextureResource.load(named: "khoi") {
-            // Create a material parameter and assign it.
-            let baseColor = MaterialParameters.Texture(baseResource)
-            myMaterial.baseColor = PhysicallyBasedMaterial.BaseColor(texture:baseColor)
-        }
-
-        let entity = ModelEntity(
-            mesh: .generatePlane(width: 0.5, depth: 1),
-            materials: [myMaterial]
-        )
-        
-        let anchor = AnchorEntity(.image(group: "AR Resources", name: "pattern1"))
-        
-        entity.setParent(anchor)
+        let cardData = CardModel.getCardData()
+//        ForEach(cardData) { card in
+            var myMaterial = PhysicallyBasedMaterial()
+            
+        if let baseResource = try? TextureResource.load(named: cardData[0].imageName) {
+                // Create a material parameter and assign it.
+                let baseColor = MaterialParameters.Texture(baseResource)
+                myMaterial.baseColor = PhysicallyBasedMaterial.BaseColor(texture:baseColor)
+            }
+            
+            let entity = ModelEntity(
+                mesh: .generatePlane(width: 0.5, depth: 1),
+                materials: [myMaterial]
+            )
+            
+        let anchor = AnchorEntity(.image(group: "AR Resources", name: cardData[0].pattern))
+            
+            entity.setParent(anchor)
+            arView.scene.anchors.append(anchor)
+//        }
         
 //        // Retrieve the current transformation of the model entity
 //        var transform = entity.transform
@@ -38,8 +40,6 @@ struct ARViewContainer: UIViewRepresentable {
         
 //        let radians = 90.0 * Float.pi / 180.0
 //        entity.orientation *= simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
-        
-        arView.scene.anchors.append(anchor)
         
         var myMaterial2 = PhysicallyBasedMaterial()
         if let baseResource2 = try? TextureResource.load(named: "gta") {
