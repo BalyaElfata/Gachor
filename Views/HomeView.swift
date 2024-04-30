@@ -49,6 +49,9 @@ struct HomeView: View {
                         .foregroundColor(.white)
                 }
                 .padding(.top, 20)
+//                .onTapGesture {
+//                    playSound(sound: "coin1", type: "wav")
+//                }
             }
             
             Spacer()
@@ -67,15 +70,9 @@ struct HomeView: View {
             }
         }
         .onAppear() {
-            AudioServicesPlaySystemSound(1027)
+            playMusic(music: "bgMusic", type: "mp3")
         }
     }
-//    func backgroundMusic() {
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-//            AudioServicesPlaySystemSound(1027)
-//            backgroundMusic()
-//        }
-//    }
 }
 
 #Preview {

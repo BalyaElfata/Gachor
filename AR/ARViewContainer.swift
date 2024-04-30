@@ -34,10 +34,6 @@ struct ARViewContainer: UIViewRepresentable {
 //        // Move the modelEntity to its new transformed position
 //        entity.move(to: transform, relativeTo: entity.parent, duration: 3.0)
         
-//        entity.playAnimation(anim.repeat(duration: .infinity),
-//                             transitionDuration: 1.25,
-//                             startsPaused: false)
-        
 //        let radians = 90.0 * Float.pi / 180.0
 //        entity.orientation *= simd_quatf(angle: radians, axis: SIMD3(x: 0, y: 0, z: 1))
         

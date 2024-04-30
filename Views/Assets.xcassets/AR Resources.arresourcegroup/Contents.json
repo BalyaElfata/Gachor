@@ -1,0 +1,77 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "resources" : [
+    {
+      "filename" : "pattern1.arreferenceimage"
+    },
+    {
+      "filename" : "pattern2.arreferenceimage"
+    },
+    {
+      "filename" : "pattern3.arreferenceimage"
+    },
+    {
+      "filename" : "pattern4.arreferenceimage"
+    },
+    {
+      "filename" : "pattern5.arreferenceimage"
+    },
+    {
+      "filename" : "pattern6.arreferenceimage"
+    },
+    {
+      "filename" : "pattern7.arreferenceimage"
+    },
+    {
+      "filename" : "pattern8.arreferenceimage"
+    },
+    {
+      "filename" : "pattern9.arreferenceimage"
+    },
+    {
+      "filename" : "pattern10.arreferenceimage"
+    },
+    {
+      "filename" : "pattern11.arreferenceimage"
+    },
+    {
+      "filename" : "pattern12.arreferenceimage"
+    },
+    {
+      "filename" : "pattern13.arreferenceimage"
+    },
+    {
+      "filename" : "pattern14.arreferenceimage"
+    },
+    {
+      "filename" : "pattern15.arreferenceimage"
+    },
+    {
+      "filename" : "pattern16.arreferenceimage"
+    },
+    {
+      "filename" : "pattern17.arreferenceimage"
+    },
+    {
+      "filename" : "pattern18.arreferenceimage"
+    },
+    {
+      "filename" : "pattern19.arreferenceimage"
+    },
+    {
+      "filename" : "pattern20.arreferenceimage"
+    },
+    {
+      "filename" : "pattern21.arreferenceimage"
+    },
+    {
+      "filename" : "pattern22.arreferenceimage"
+    },
+    {
+      "filename" : "pattern23.arreferenceimage"
+    }
+  ]
+}

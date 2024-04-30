@@ -19,6 +19,7 @@
 		21C8E6552BDD516200BE79BF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E6542BDD516200BE79BF /* HomeView.swift */; };
 		21C8E6572BDE699B00BE79BF /* CardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E6562BDE699B00BE79BF /* CardCollectionView.swift */; };
 		21C8E6592BDE712400BE79BF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C8E6582BDE712400BE79BF /* Card.swift */; };
+		21E891FE2BE0DA19005E01F6 /* playSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E891FD2BE0DA19005E01F6 /* playSound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		21C8E6542BDD516200BE79BF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		21C8E6562BDE699B00BE79BF /* CardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionView.swift; sourceTree = "<group>"; };
 		21C8E6582BDE712400BE79BF /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		21E891FD2BE0DA19005E01F6 /* playSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playSound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,8 @@
 			children = (
 				21C8E64B2BDB821300BE79BF /* AR */,
 				21C8E65A2BDE714B00BE79BF /* Model */,
-				21C8E61C2BD8E70D00BE79BF /* Gachor */,
+				21C8E61C2BD8E70D00BE79BF /* Views */,
+				21E891FC2BE0D9A8005E01F6 /* Sound */,
 				21C8E61B2BD8E70D00BE79BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,7 +69,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		21C8E61C2BD8E70D00BE79BF /* Gachor */ = {
+		21C8E61C2BD8E70D00BE79BF /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				21C8E61D2BD8E70D00BE79BF /* GachorApp.swift */,
@@ -76,7 +79,7 @@
 				21C8E6212BD8E70F00BE79BF /* Assets.xcassets */,
 				21C8E6232BD8E70F00BE79BF /* Preview Content */,
 			);
-			path = Gachor;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		21C8E6232BD8E70F00BE79BF /* Preview Content */ = {
@@ -105,6 +108,14 @@
 				21C8E6582BDE712400BE79BF /* Card.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		21E891FC2BE0D9A8005E01F6 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				21E891FD2BE0DA19005E01F6 /* playSound.swift */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				21C8E6532BDD4FEC00BE79BF /* CustomARViewRepresentable.swift in Sources */,
 				21C8E6482BDB3DEA00BE79BF /* CustomARView.swift in Sources */,
 				2128880A2BE0007B005CE39B /* CardView.swift in Sources */,
+				21E891FE2BE0DA19005E01F6 /* playSound.swift in Sources */,
 				21C8E6202BD8E70D00BE79BF /* ContentView.swift in Sources */,
 				21C8E6572BDE699B00BE79BF /* CardCollectionView.swift in Sources */,
 				21C8E61E2BD8E70D00BE79BF /* GachorApp.swift in Sources */,
@@ -319,7 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Gachor/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Views/Preview Content\"";
 				DEVELOPMENT_TEAM = H3779UJ6B2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -349,7 +361,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Gachor/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Views/Preview Content\"";
 				DEVELOPMENT_TEAM = H3779UJ6B2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
