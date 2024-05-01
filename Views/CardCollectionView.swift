@@ -34,9 +34,9 @@ struct CardCollectionView: View {
                     CardView(card: cardData[0]) // Steve Jobs
                         .padding(.bottom)
                         .onTapGesture {
+                            UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
                             Sounds.playSound(sound: "powerup3", type: "wav")
                             showView[0].toggle()}
-                        .sensoryFeedback(.success, trigger: isCardTapped)
                         .sheet(isPresented: $showView[0], content: {
                             CardDetailView(card: cardData[0])})
                     
@@ -47,18 +47,18 @@ struct CardCollectionView: View {
                             if card.rarity == "Super Rare" {
                                 CardView(card: card) // George
                                     .onTapGesture {
+                                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                                         Sounds.playSound(sound: "powerup1", type: "wav")
                                         showView[index].toggle()}
-                                    .sensoryFeedback(.success, trigger: isCardTapped)
                                     .sheet(isPresented: $showView[index], content: {
                                         CardDetailView(card: card)})}
                             
                             if card.rarity == "Rare"  {
                                 CardView(card: card)
                                     .onTapGesture {
+                                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
                                         Sounds.playSound(sound: "powerup5", type: "wav")
                                         showView[index].toggle()}
-                                    .sensoryFeedback(.success, trigger: isCardTapped)
                                     .sheet(isPresented: $showView[index], content: {
                                         CardDetailView(card: card)})}
                         }
