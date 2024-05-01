@@ -9,9 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct HomeView: View {
-    @State var isLogoTapped = false
-    @State var isCameraTapped = false
-    @State var isBookTapped = false
+    @State var isTapped = false
     @State var isScaled = false
     @Environment(\.backgroundMaterial) var backgroundMaterial
     
@@ -32,8 +30,8 @@ struct HomeView: View {
                         .scaleEffect(isScaled ? 1.0 : 0.8)
                         .rotation3DEffect(
                             Angle(
-                                degrees: self.isLogoTapped ? 360 : 0),
-                            axis: (x: 0, y: self.isLogoTapped ? 360 : 0, z: 0)
+                                degrees: self.isTapped ? 360 : 0),
+                            axis: (x: 0, y: self.isTapped ? 360 : 0, z: 0)
                         )
                         .onAppear {
                             Sounds.playSound(sound: "coin6", type: "wav")
@@ -43,9 +41,9 @@ struct HomeView: View {
                         }
                         .onTapGesture {
                             Sounds.playSound(sound: "coin1", type: "wav")
-                            withAnimation(.linear(duration: 0.5)) {isLogoTapped.toggle()}
+                            withAnimation(.linear(duration: 0.5)) {isTapped.toggle()}
                         }
-                        .sensoryFeedback(.success, trigger: isLogoTapped)
+                        .sensoryFeedback(.success, trigger: isTapped)
                     
                     //Camera Button
                     NavigationLink (destination: ContentView()) {
@@ -63,8 +61,8 @@ struct HomeView: View {
                         }
                         .padding(.vertical, 14)
                     }
-                    .sensoryFeedback(.success, trigger: isCameraTapped)
                     .simultaneousGesture(TapGesture().onEnded {
+                        UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
                         Sounds.playSound(sound: "coin3", type: "wav")})
                     
                     // Card Collection Button
@@ -89,9 +87,9 @@ struct HomeView: View {
 
                         )
                     }
-                    .sensoryFeedback(.success, trigger: isBookTapped)
                     .simultaneousGesture(TapGesture().onEnded {
-                            Sounds.playSound(sound: "coin2", type: "wav")})
+                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                        Sounds.playSound(sound: "coin2", type: "wav")})
                 }
             }
         }
