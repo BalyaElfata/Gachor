@@ -68,8 +68,8 @@ struct ARViewContainer: UIViewRepresentable {
             let tapLocation = gestureRecognizer.location(in: arView)
             
             // Perform hit test to check if an entity is tapped
-            if let entity = arView.entity(at: tapLocation) {
-                let generator = UIImpactFeedbackGenerator(style: .light)
+            if arView.entity(at: tapLocation) != nil {
+                let generator = UIImpactFeedbackGenerator(style: .heavy)
                 generator.impactOccurred()
                 
                 // Play sound when entity is tapped
