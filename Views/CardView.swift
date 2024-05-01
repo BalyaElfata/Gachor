@@ -12,16 +12,36 @@ struct CardView: View {
     var card: CardModel
 
     var body: some View {
-        VStack {
-            Image(card.name)
-                .resizable()
-                .frame(width: 171, height: 247)
-                .scaledToFill()
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(.gray, lineWidth: 5)
-                )
+        VStack(spacing: 10) {
+            switch card.rarity {
+            case "Legendary":
+                Image(card.name)
+                    .resizable()
+                    .frame(width: 171, height: 247)
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.purple, lineWidth: 5)
+                    )
+            case "Super Rare":
+                Image(card.name)
+                    .resizable()
+                    .frame(width: 171, height: 247)
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.blue, lineWidth: 5)
+                    )
+            default:
+                Image(card.name)
+                    .resizable()
+                    .frame(width: 171, height: 247)
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.gray, lineWidth: 5)
+                    )
+            }
             ZStack {
                 Rectangle()
                     .foregroundColor(.white)

@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct HomeView: View {
-    @State var isCameraTapped = false
+    @State var isLogoTapped = false
     @Environment(\.backgroundMaterial) var backgroundMaterial
     
     var body: some View {
@@ -18,69 +18,69 @@ struct HomeView: View {
                 Image("background")
                     .resizable()
                     .ignoresSafeArea()
-                VStack {
+                VStack (alignment: .center){
                     // Logo
-                    Image("twitch")
+                    Image("Logo")
                         .resizable()
                         .frame(width: 264, height: 264)
-                        .scaledToFill()
-                        .cornerRadius(246)
-                        .padding(.top, 128)
+                        .padding(.bottom, 50)
+                        .shadow(color: .black.opacity(0.2), radius: 12.5, x: 0, y: 9)
                         .rotation3DEffect(
                             Angle(
-                                degrees: self.isCameraTapped ? 360 : 0),
-                            axis: (x: 0, y: self.isCameraTapped ? 360 : 0, z: 0)
+                                degrees: self.isLogoTapped ? 360 : 0),
+                            axis: (x: 0, y: self.isLogoTapped ? 360 : 0, z: 0)
                         )
                         .onTapGesture {
                             Sounds.playSound(sound: "coin1", type: "wav")
-                            withAnimation(.linear(duration: 0.5)) {isCameraTapped.toggle()}
+                            withAnimation(.linear(duration: 0.5)) {isLogoTapped.toggle()}
                         }
-                        .sensoryFeedback(.success, trigger: isCameraTapped)
+                        .sensoryFeedback(.success, trigger: isLogoTapped)
                     
                     //Camera Button
                     NavigationLink (destination: ContentView()) {
                         ZStack {
                             Rectangle()
-                            //                .padding(.vertical)
-                                .frame(width: 125, height: 68)
-                                .cornerRadius(12)
+                                .frame(width: 164, height: 68)
+                                .cornerRadius(15)
                                 .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
+                                .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 8)
                             
                             Image(systemName: "camera.fill")
                                 .resizable()
                                 .frame(width: 40, height: 32)
                                 .foregroundColor(.white)
                         }
-                        .padding(.top, 20)
+                        .padding(.vertical, 14)
                     }
                     .simultaneousGesture(TapGesture().onEnded {
-                        Sounds.playSound(sound: "coin3", type: "wav")
-                    })
-                    
-                    Spacer()
+                        Sounds.playSound(sound: "coin3", type: "wav")})
+                    .sensoryFeedback(.success, trigger: isLogoTapped)
                     
                     // Card Collection Button
-                    HStack()
-                    {
-                        Spacer()
-                        NavigationLink(destination: CardCollectionView()) {
-                            ZStack {
-                                Rectangle()
-                                    .frame(width: 68, height: 68)
-                                    .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
-                                    .cornerRadius(12)
-                                Image(systemName:"book.closed.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 30)
-                                    .foregroundColor(.white)
-                            }
+                    NavigationLink(destination: CardCollectionView()) {
+                        ZStack {
+                            Rectangle()
+                                .frame(width: 164, height: 68)
+                                .foregroundColor(.white)
+                                .cornerRadius(15)
+                                .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 8)
+                            Image(systemName:"book.closed.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30)
+                                .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
                         }
-                        .simultaneousGesture(TapGesture().onEnded {
-                            Sounds.playSound(sound: "coin2", type: "wav")
-                        })
+//                        .padding(.top, 20)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 15)
+                            .inset(by: 2.5)
+                            .stroke(Color(red: 0.95, green: 0.68, blue: 0), lineWidth: 5)
+
+                        )
                     }
-                    .padding(.trailing, 20)
+                    .simultaneousGesture(TapGesture().onEnded {
+                            Sounds.playSound(sound: "coin2", type: "wav")})
+                    .sensoryFeedback(.success, trigger: isLogoTapped)
                 }
             }
         }

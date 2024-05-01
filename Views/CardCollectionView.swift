@@ -10,6 +10,8 @@ import AVFoundation
 
 struct CardCollectionView: View {
     @Environment(\.dismiss) var dismiss
+    @State var showView = [Bool](repeating: false, count: 25)
+    @State var isCardTapped = false
     let cardData = CardModel.getCardData()
     
 //    let data = (1...25).map { "Item \($0)" }
@@ -25,17 +27,47 @@ struct CardCollectionView: View {
             Image("background")
                 .resizable()
                 .ignoresSafeArea()
+            
             ScrollView(.vertical){
-                CardView(card: cardData[0]) // Steve Jobs
-                    .padding(.bottom)
+//                if card.rarity == "Legendary" {
+                    CardView(card: cardData[0]) // Steve Jobs
+                        .padding(.bottom)
+                        .onTapGesture {
+                            Sounds.playSound(sound: "powerup3", type: "wav")
+                            showView[0].toggle()
+                        }
+                        .sensoryFeedback(.success, trigger: isCardTapped)
+                
+                    .sheet(isPresented: $showView[0], content: {
+                        CardDetailView(card: cardData[0])})
+//                }
                 LazyVGrid(columns: columns, spacing: 16) {
-                    CardView(card: cardData[1]) // George
-                    ForEach(cardData) { card in
-                        if (card.rarity == "Rare")  {
+                    ForEach(cardData.indices, id: \.self) { index in
+                    let card = cardData[index]
+                    if card.rarity == "Super Rare" {
+                        CardView(card: card) // George
+                            .onTapGesture {
+                                Sounds.playSound(sound: "powerup1", type: "wav")
+                                showView[index].toggle()
+                            }
+                            .sensoryFeedback(.success, trigger: isCardTapped)
+                            .sheet(isPresented: $showView[index], content: {
+                                CardDetailView(card: card)})
+                    }
+                    
+                        if card.rarity == "Rare"  {
                             CardView(card: card)
+                                .onTapGesture {
+                                    Sounds.playSound(sound: "powerup2", type: "wav")
+                                    showView[index].toggle()
+                                }
+                                .sensoryFeedback(.success, trigger: isCardTapped)
+                        .sheet(isPresented: $showView[index], content: {
+                            CardDetailView(card: card)})
                         }
                     }
                 }
+                
             }
         }
         .navigationBarBackButtonHidden(true)

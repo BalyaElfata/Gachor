@@ -27,6 +27,10 @@
 		21E892182BE100CD005E01F6 /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 21E892112BE100CD005E01F6 /* bgMusic.mp3 */; };
 		21E892192BE100CD005E01F6 /* coin6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21E892122BE100CD005E01F6 /* coin6.wav */; };
 		21E8921A2BE100CD005E01F6 /* coin4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21E892132BE100CD005E01F6 /* coin4.wav */; };
+		21E8921C2BE160CF005E01F6 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E8921B2BE160CF005E01F6 /* CardDetailView.swift */; };
+		21E892202BE21A71005E01F6 /* powerup1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21E8921D2BE21A71005E01F6 /* powerup1.wav */; };
+		21E892212BE21A71005E01F6 /* powerup2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21E8921E2BE21A71005E01F6 /* powerup2.wav */; };
+		21E892222BE21A71005E01F6 /* powerup3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21E8921F2BE21A71005E01F6 /* powerup3.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,10 @@
 		21E892112BE100CD005E01F6 /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgMusic.mp3; path = "../../../../../Downloads/music and sounds/bgMusic.mp3"; sourceTree = "<group>"; };
 		21E892122BE100CD005E01F6 /* coin6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = coin6.wav; path = "../../../../../Downloads/music and sounds/coin6.wav"; sourceTree = "<group>"; };
 		21E892132BE100CD005E01F6 /* coin4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = coin4.wav; path = "../../../../../Downloads/music and sounds/coin4.wav"; sourceTree = "<group>"; };
+		21E8921B2BE160CF005E01F6 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		21E8921D2BE21A71005E01F6 /* powerup1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = powerup1.wav; path = "../../../../../Downloads/music and sounds/powerup1.wav"; sourceTree = "<group>"; };
+		21E8921E2BE21A71005E01F6 /* powerup2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = powerup2.wav; path = "../../../../../Downloads/music and sounds/powerup2.wav"; sourceTree = "<group>"; };
+		21E8921F2BE21A71005E01F6 /* powerup3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = powerup3.wav; path = "../../../../../Downloads/music and sounds/powerup3.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 				21C8E61D2BD8E70D00BE79BF /* GachorApp.swift */,
 				212888092BE0007B005CE39B /* CardView.swift */,
 				21C8E6562BDE699B00BE79BF /* CardCollectionView.swift */,
+				21E8921B2BE160CF005E01F6 /* CardDetailView.swift */,
 				21C8E6542BDD516200BE79BF /* HomeView.swift */,
 				21C8E6212BD8E70F00BE79BF /* Assets.xcassets */,
 				21C8E6232BD8E70F00BE79BF /* Preview Content */,
@@ -129,6 +138,9 @@
 			children = (
 				21E891FD2BE0DA19005E01F6 /* playSound.swift */,
 				21E892112BE100CD005E01F6 /* bgMusic.mp3 */,
+				21E8921D2BE21A71005E01F6 /* powerup1.wav */,
+				21E8921E2BE21A71005E01F6 /* powerup2.wav */,
+				21E8921F2BE21A71005E01F6 /* powerup3.wav */,
 				21E892102BE100CD005E01F6 /* coin1.wav */,
 				21E8920E2BE100CD005E01F6 /* coin2.wav */,
 				21E8920F2BE100CD005E01F6 /* coin3.wav */,
@@ -198,12 +210,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				21E8921A2BE100CD005E01F6 /* coin4.wav in Resources */,
+				21E892202BE21A71005E01F6 /* powerup1.wav in Resources */,
 				21E892152BE100CD005E01F6 /* coin2.wav in Resources */,
 				21E892142BE100CD005E01F6 /* coin5.wav in Resources */,
 				21E892182BE100CD005E01F6 /* bgMusic.mp3 in Resources */,
 				21C8E6252BD8E70F00BE79BF /* Preview Assets.xcassets in Resources */,
+				21E892212BE21A71005E01F6 /* powerup2.wav in Resources */,
 				21E892192BE100CD005E01F6 /* coin6.wav in Resources */,
 				21E892172BE100CD005E01F6 /* coin1.wav in Resources */,
+				21E892222BE21A71005E01F6 /* powerup3.wav in Resources */,
 				21C8E6222BD8E70F00BE79BF /* Assets.xcassets in Resources */,
 				21E892162BE100CD005E01F6 /* coin3.wav in Resources */,
 			);
@@ -219,6 +234,7 @@
 				21C8E6512BDD4F5600BE79BF /* ARAction.swift in Sources */,
 				21C8E6592BDE712400BE79BF /* Card.swift in Sources */,
 				21C8E6532BDD4FEC00BE79BF /* CustomARViewRepresentable.swift in Sources */,
+				21E8921C2BE160CF005E01F6 /* CardDetailView.swift in Sources */,
 				21C8E6482BDB3DEA00BE79BF /* CustomARView.swift in Sources */,
 				2128880A2BE0007B005CE39B /* CardView.swift in Sources */,
 				21E891FE2BE0DA19005E01F6 /* playSound.swift in Sources */,
