@@ -24,6 +24,8 @@ struct ARViewContainer: UIViewRepresentable {
             let anchor = AnchorEntity(.image(group: "AR Resources", name: card.pattern))
             
             entity.setParent(anchor)
+            
+            arView.installGestures(.rotation, for: entity)
             arView.scene.anchors.append(anchor)
             
             // Retrieve the current transformation of the model entity
@@ -32,7 +34,7 @@ struct ARViewContainer: UIViewRepresentable {
             transform.rotation = simd_quatf(angle: .pi, axis: [0, 1, 0])
             
             // Apply the rotation animation with repeat count set to infinity
-            entity.move(to: transform, relativeTo: entity.parent, duration: 6.0, timingFunction: .easeInOut)
+            entity.move(to: transform, relativeTo: entity.parent, duration: 3.0, timingFunction: .easeInOut)
         }
         
         return arView

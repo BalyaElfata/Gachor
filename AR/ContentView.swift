@@ -45,8 +45,8 @@ struct ContentView: View {
                     .scaledToFit()
                     .frame(height: 75)
                     .foregroundColor(.white)
-                    .padding(.leading, 150)
-                    .padding(.top, 150)
+                    .padding(.leading, 200)
+                    .padding(.top, 300)
                     .opacity(0.5)
             }
         }
