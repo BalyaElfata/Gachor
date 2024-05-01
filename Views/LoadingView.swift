@@ -71,7 +71,7 @@ struct LoadingView: View {
         }
     }
     func startAnimationBar(){
-        _ = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true){timer in
+        _ = Timer.scheduledTimer(withTimeInterval: 0.025, repeats: true){timer in
             withAnimation{
                 progressValue += 0.01
             }
