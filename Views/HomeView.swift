@@ -88,7 +88,7 @@ struct HomeView: View {
                         )
                     }
                     .simultaneousGesture(TapGesture().onEnded {
-                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                        UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
                         Sounds.playSound(sound: "coin2", type: "wav")})
                 }
             }

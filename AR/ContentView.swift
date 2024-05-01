@@ -18,7 +18,10 @@ struct ContentView: View {
                 .navigationBarBackButtonHidden(true)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Button(action: {dismiss()}) {
+                        Button(action: {
+                            dismiss()
+                            UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
+                        }) {
                             Image(systemName: "chevron.backward")
                                 .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
                             Image(systemName: "house.fill")

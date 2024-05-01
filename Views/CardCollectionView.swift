@@ -70,6 +70,7 @@ struct CardCollectionView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     Button(action: {
                         dismiss()
+                        UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
                     }) {
                         Image(systemName: "chevron.backward")
                             .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
