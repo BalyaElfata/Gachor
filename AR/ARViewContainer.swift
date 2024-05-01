@@ -5,10 +5,10 @@ class CustomCard: Entity, HasModel, HasCollision {
     required init(material: PhysicallyBasedMaterial) {
         super.init()
         self.model = ModelComponent(
-            mesh: .generateBox(size: [1, 0.5, 0.001]),
+            mesh: .generateBox(size: [0.9, 1.3, 0.001]), // Card Size
             materials: [material]
         )
-        self.generateCollisionShapes(recursive: true)
+        self.generateCollisionShapes(recursive: true) // enable interactions with model entity
     }
 
     required init() {
@@ -24,20 +24,19 @@ struct ARViewContainer: UIViewRepresentable {
         let cardData = CardModel.getCardData()
         
         for card in cardData {
+            // Custom texture for Model Entity
             var myMaterial = PhysicallyBasedMaterial()
-                
             if let baseResource = try? TextureResource.load(named: card.imageName) {
-                // Create a material parameter and assign it.
                 let baseColor = MaterialParameters.Texture(baseResource)
                 myMaterial.baseColor = PhysicallyBasedMaterial.BaseColor(texture: baseColor)
             }
             
-            let entity = CustomCard(material: myMaterial) // Use CustomBox instead of ModelEntity
+            let entity = CustomCard(material: myMaterial) // Model Entity
             
-            let anchor = AnchorEntity(.image(group: "AR Resources", name: card.pattern))
+            let anchor = AnchorEntity(.image(group: "AR Resources", name: card.pattern)) // Anchor Entity
             entity.setParent(anchor)
             
-            arView.installGestures([.rotation, .scale], for: entity)
+            arView.installGestures([.rotation, .scale], for: entity) // add rotation and scale to entity
             
             // Add tap gesture recognizer to the ARView
             let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.handleTap(_:)))
