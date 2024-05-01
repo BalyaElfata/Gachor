@@ -18,43 +18,37 @@ struct ContentView: View {
                 .navigationBarBackButtonHidden(true)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Button(action: {
-                            dismiss()
-                        }) {
+                        Button(action: {dismiss()}) {
                             Image(systemName: "chevron.backward")
                                 .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
                             Image(systemName: "house.fill")
-                                .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
-                        }
-                    }
+                            .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))}}
                 }
                 .onAppear() {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { // Adjust the time interval as needed
-                        showingImage = false
-                    }
+                    withAnimation(.linear.delay(6)){showingImage = false}
                 }
-            if showingImage {
                 Image("pattern")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200)
                     .opacity(0.5)
                     .blur(radius: /*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    .overlay{
+                        Color(red: 0.95, green: 0.68, blue: 0)
+                            .opacity(0.2)
+                            .cornerRadius(30)
+                    }
+                    .opacity(withAnimation(.easeInOut(duration: 2)) {
+                        showingImage == true ? 0.5 : 0})
                 Image(systemName: "magnifyingglass")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 75)
-                    .foregroundColor(.white)
+                    .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
                     .padding(.leading, 200)
                     .padding(.top, 300)
-                    .opacity(0.5)
-            }
-        }
-    }
-    private func showImage() {
-        self.showingImage = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.showingImage = false
+                    .opacity(withAnimation(.easeInOut(duration: 2)) {
+                        showingImage == true ? 0.5 : 0})
         }
     }
 }

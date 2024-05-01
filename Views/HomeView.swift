@@ -10,6 +10,9 @@ import AVFoundation
 
 struct HomeView: View {
     @State var isLogoTapped = false
+    @State var isCameraTapped = false
+    @State var isBookTapped = false
+    @State var isScaled = false
     @Environment(\.backgroundMaterial) var backgroundMaterial
     
     var body: some View {
@@ -21,16 +24,23 @@ struct HomeView: View {
                     .blur(radius: 2)
                 VStack (alignment: .center){
                     // Logo
-                    Image("Logo")
+                    Image("logo")
                         .resizable()
                         .frame(width: 264, height: 264)
                         .padding(.bottom, 34.5)
                         .shadow(color: Color(red: 0.13, green: 0.05, blue: 0.27).opacity(0.3), radius: 15, x: 0, y: 0)
+                        .scaleEffect(isScaled ? 1.0 : 0.8)
                         .rotation3DEffect(
                             Angle(
                                 degrees: self.isLogoTapped ? 360 : 0),
                             axis: (x: 0, y: self.isLogoTapped ? 360 : 0, z: 0)
                         )
+                        .onAppear {
+                            Sounds.playSound(sound: "coin6", type: "wav")
+                            withAnimation(.spring(response: 0.5, dampingFraction: 0.2)){
+                                self.isScaled.toggle()
+                            }
+                        }
                         .onTapGesture {
                             Sounds.playSound(sound: "coin1", type: "wav")
                             withAnimation(.linear(duration: 0.5)) {isLogoTapped.toggle()}
@@ -53,9 +63,9 @@ struct HomeView: View {
                         }
                         .padding(.vertical, 14)
                     }
+                    .sensoryFeedback(.success, trigger: isCameraTapped)
                     .simultaneousGesture(TapGesture().onEnded {
                         Sounds.playSound(sound: "coin3", type: "wav")})
-                    .sensoryFeedback(.success, trigger: isLogoTapped)
                     
                     // Card Collection Button
                     NavigationLink(destination: CardCollectionView()) {
@@ -79,9 +89,9 @@ struct HomeView: View {
 
                         )
                     }
+                    .sensoryFeedback(.success, trigger: isBookTapped)
                     .simultaneousGesture(TapGesture().onEnded {
                             Sounds.playSound(sound: "coin2", type: "wav")})
-                    .sensoryFeedback(.success, trigger: isLogoTapped)
                 }
             }
         }
