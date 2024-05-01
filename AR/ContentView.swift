@@ -25,7 +25,7 @@ struct ContentView: View {
                             .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))}}
                 }
                 .onAppear() {
-                    withAnimation(.linear.delay(6)){showingImage = false}
+                    withAnimation(.linear.delay(5)){showingImage = false}
                 }
                 Image("pattern")
                     .resizable()
