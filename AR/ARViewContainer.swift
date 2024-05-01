@@ -1,23 +1,17 @@
 import SwiftUI
 import RealityKit
 
-class CustomBox: Entity, HasModel, HasCollision {
-  required init(color: UIColor) {
-    super.init()
-    self.model = ModelComponent(
-      mesh: .generateBox(size: [1, 0.2, 1]),
-      materials: [SimpleMaterial(
-        color: color,
-        isMetallic: false)
-      ]
-    )
-    self.generateCollisionShapes(recursive: true)
-    self.collision = CollisionComponent(
-    shapes: [.generateBox(size: [1, 0.2, 1])]
-    )
-  }
-    
-    @MainActor required init() {
+class CustomCard: Entity, HasModel, HasCollision {
+    required init(material: PhysicallyBasedMaterial) {
+        super.init()
+        self.model = ModelComponent(
+            mesh: .generateBox(size: [1, 0.5, 0.001]),
+            materials: [material]
+        )
+        self.generateCollisionShapes(recursive: true)
+    }
+
+    required init() {
         fatalError("init() has not been implemented")
     }
 }
@@ -25,7 +19,6 @@ class CustomBox: Entity, HasModel, HasCollision {
 struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
-        
         let arView = ARView(frame: .zero)
         
         let cardData = CardModel.getCardData()
@@ -39,15 +32,16 @@ struct ARViewContainer: UIViewRepresentable {
                 myMaterial.baseColor = PhysicallyBasedMaterial.BaseColor(texture: baseColor)
             }
             
-            let entity = ModelEntity(
-                mesh: .generateBox(width: 0.5, height: 1, depth: 0.001),
-                materials: [myMaterial])
+            let entity = CustomCard(material: myMaterial) // Use CustomBox instead of ModelEntity
             
             let anchor = AnchorEntity(.image(group: "AR Resources", name: card.pattern))
             entity.setParent(anchor)
             
-            entity.generateCollisionShapes(recursive: true)
             arView.installGestures([.rotation, .scale], for: entity)
+            
+            // Add tap gesture recognizer to the ARView
+            let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.handleTap(_:)))
+            arView.addGestureRecognizer(tapGesture)
             
             arView.scene.anchors.append(anchor)
             
@@ -64,4 +58,19 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) { }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+    
+    class Coordinator: NSObject {
+        @objc func handleTap(_ gestureRecognizer: UITapGestureRecognizer) {
+            guard let arView = gestureRecognizer.view as? ARView else { return }
+            let tapLocation = gestureRecognizer.location(in: arView)
+            
+            // Perform hit test to check if an entity is tapped
+            if let entity = arView.entity(at: tapLocation) {
+                // Play sound when entity is tapped
+                Sounds.playSound(sound: "powerup2", type: "wav")}}
+    }
 }
