@@ -1,9 +1,31 @@
 import SwiftUI
 import RealityKit
 
+class CustomBox: Entity, HasModel, HasCollision {
+  required init(color: UIColor) {
+    super.init()
+    self.model = ModelComponent(
+      mesh: .generateBox(size: [1, 0.2, 1]),
+      materials: [SimpleMaterial(
+        color: color,
+        isMetallic: false)
+      ]
+    )
+    self.generateCollisionShapes(recursive: true)
+    self.collision = CollisionComponent(
+    shapes: [.generateBox(size: [1, 0.2, 1])]
+    )
+  }
+    
+    @MainActor required init() {
+        fatalError("init() has not been implemented")
+    }
+}
+
 struct ARViewContainer: UIViewRepresentable {
     
     func makeUIView(context: Context) -> ARView {
+        
         let arView = ARView(frame: .zero)
         
         let cardData = CardModel.getCardData()
@@ -22,10 +44,11 @@ struct ARViewContainer: UIViewRepresentable {
                 materials: [myMaterial])
             
             let anchor = AnchorEntity(.image(group: "AR Resources", name: card.pattern))
-            
             entity.setParent(anchor)
             
-            arView.installGestures(.rotation, for: entity)
+            entity.generateCollisionShapes(recursive: true)
+            arView.installGestures([.rotation, .scale], for: entity)
+            
             arView.scene.anchors.append(anchor)
             
             // Retrieve the current transformation of the model entity
