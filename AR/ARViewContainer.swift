@@ -70,7 +70,12 @@ struct ARViewContainer: UIViewRepresentable {
             
             // Perform hit test to check if an entity is tapped
             if let entity = arView.entity(at: tapLocation) {
+                let generator = UIImpactFeedbackGenerator(style: .light)
+                generator.impactOccurred()
+                
                 // Play sound when entity is tapped
-                Sounds.playSound(sound: "powerup2", type: "wav")}}
+                Sounds.playSound(sound: "powerup2", type: "wav")
+                
+            }}
     }
 }
