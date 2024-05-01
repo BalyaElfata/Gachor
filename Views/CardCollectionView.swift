@@ -56,7 +56,7 @@ struct CardCollectionView: View {
                             if card.rarity == "Rare"  {
                                 CardView(card: card)
                                     .onTapGesture {
-                                        Sounds.playSound(sound: "powerup2", type: "wav")
+                                        Sounds.playSound(sound: "powerup5", type: "wav")
                                         showView[index].toggle()}
                                     .sensoryFeedback(.success, trigger: isCardTapped)
                                     .sheet(isPresented: $showView[index], content: {

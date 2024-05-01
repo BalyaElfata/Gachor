@@ -31,6 +31,8 @@
 		21E892222BE21A71005E01F6 /* powerup3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21E8921F2BE21A71005E01F6 /* powerup3.wav */; };
 		21E892242BE27842005E01F6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E892232BE27842005E01F6 /* LoadingView.swift */; };
 		21E892262BE29A4D005E01F6 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E892252BE29A4D005E01F6 /* ViewCoordinator.swift */; };
+		21E8922B2BE2B468005E01F6 /* powerup4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21E892292BE2B468005E01F6 /* powerup4.wav */; };
+		21E8922C2BE2B468005E01F6 /* powerup5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 21E8922A2BE2B468005E01F6 /* powerup5.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		21E8921F2BE21A71005E01F6 /* powerup3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = powerup3.wav; path = "../../../../../Downloads/music and sounds/powerup3.wav"; sourceTree = "<group>"; };
 		21E892232BE27842005E01F6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		21E892252BE29A4D005E01F6 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
+		21E892292BE2B468005E01F6 /* powerup4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = powerup4.wav; path = "../../../../../Downloads/music and sounds/powerup4.wav"; sourceTree = "<group>"; };
+		21E8922A2BE2B468005E01F6 /* powerup5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = powerup5.wav; path = "../../../../../Downloads/music and sounds/powerup5.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 				21E8921D2BE21A71005E01F6 /* powerup1.wav */,
 				21E8921E2BE21A71005E01F6 /* powerup2.wav */,
 				21E8921F2BE21A71005E01F6 /* powerup3.wav */,
+				21E892292BE2B468005E01F6 /* powerup4.wav */,
+				21E8922A2BE2B468005E01F6 /* powerup5.wav */,
 				21E892102BE100CD005E01F6 /* coin1.wav */,
 				21E8920E2BE100CD005E01F6 /* coin2.wav */,
 				21E8920F2BE100CD005E01F6 /* coin3.wav */,
@@ -212,6 +218,7 @@
 				21E8921A2BE100CD005E01F6 /* coin4.wav in Resources */,
 				21E892202BE21A71005E01F6 /* powerup1.wav in Resources */,
 				21E892152BE100CD005E01F6 /* coin2.wav in Resources */,
+				21E8922C2BE2B468005E01F6 /* powerup5.wav in Resources */,
 				21E892142BE100CD005E01F6 /* coin5.wav in Resources */,
 				21E892182BE100CD005E01F6 /* bgMusic.mp3 in Resources */,
 				21C8E6252BD8E70F00BE79BF /* Preview Assets.xcassets in Resources */,
@@ -221,6 +228,7 @@
 				21E892222BE21A71005E01F6 /* powerup3.wav in Resources */,
 				21C8E6222BD8E70F00BE79BF /* Assets.xcassets in Resources */,
 				21E892162BE100CD005E01F6 /* coin3.wav in Resources */,
+				21E8922B2BE2B468005E01F6 /* powerup4.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
