@@ -18,13 +18,14 @@ struct HomeView: View {
                 Image("background")
                     .resizable()
                     .ignoresSafeArea()
+                    .blur(radius: 2)
                 VStack (alignment: .center){
                     // Logo
                     Image("Logo")
                         .resizable()
                         .frame(width: 264, height: 264)
-                        .padding(.bottom, 50)
-                        .shadow(color: .black.opacity(0.2), radius: 12.5, x: 0, y: 9)
+                        .padding(.bottom, 34.5)
+                        .shadow(color: Color(red: 0.13, green: 0.05, blue: 0.27).opacity(0.3), radius: 15, x: 0, y: 0)
                         .rotation3DEffect(
                             Angle(
                                 degrees: self.isLogoTapped ? 360 : 0),
@@ -43,7 +44,7 @@ struct HomeView: View {
                                 .frame(width: 164, height: 68)
                                 .cornerRadius(15)
                                 .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
-                                .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 8)
+                                .shadow(color: Color(red: 0.13, green: 0.05, blue: 0.27).opacity(0.3), radius: 15, x: 0, y: 0)
                             
                             Image(systemName: "camera.fill")
                                 .resizable()
@@ -63,7 +64,7 @@ struct HomeView: View {
                                 .frame(width: 164, height: 68)
                                 .foregroundColor(.white)
                                 .cornerRadius(15)
-                                .shadow(color: .black.opacity(0.3), radius: 5, x: 0, y: 8)
+                                .shadow(color: Color(red: 0.13, green: 0.05, blue: 0.27).opacity(0.3), radius: 15, x: 0, y: 0)
                             Image(systemName:"book.closed.fill")
                                 .resizable()
                                 .scaledToFit()

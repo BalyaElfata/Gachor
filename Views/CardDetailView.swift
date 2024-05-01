@@ -18,7 +18,7 @@ struct CardDetailView: View {
                 .ignoresSafeArea()
             switch card.rarity {
             case "Legendary":
-                Image(card.name)
+                Image(card.imageName)
                     .resizable()
                     .frame(width: 360, height: 520)
                     .cornerRadius(30)
@@ -27,7 +27,7 @@ struct CardDetailView: View {
                             .stroke(.purple, lineWidth: 15)
                     )
             case "Super Rare":
-                Image(card.name)
+                Image(card.imageName)
                     .resizable()
                     .frame(width: 360, height: 520)
                     .cornerRadius(30)
@@ -36,7 +36,7 @@ struct CardDetailView: View {
                             .stroke(.blue, lineWidth: 15)
                     )
             default:
-                Image(card.name)
+                Image(card.imageName)
                     .resizable()
                     .frame(width: 360, height: 520)
                     .cornerRadius(30)
@@ -49,6 +49,6 @@ struct CardDetailView: View {
     }
 }
 
-//#Preview {
-//    CardDetailView(card: CardModel(name: "khoi", role: "Tech", rarity: "Rare", imageName: "khoi", pattern: "pattern1"))
-//}
+#Preview {
+    CardDetailView(card: CardModel(name: "khoi", role: "Tech", rarity: "Rare", imageName: "khoi", pattern: "pattern1"))
+}

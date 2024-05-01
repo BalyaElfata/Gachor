@@ -15,25 +15,25 @@ struct CardView: View {
         VStack(spacing: 10) {
             switch card.rarity {
             case "Legendary":
-                Image(card.name)
+                Image(card.imageName)
                     .resizable()
+                    .scaledToFill()
                     .frame(width: 171, height: 247)
                     .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
                             .stroke(.purple, lineWidth: 5)
                     )
             case "Super Rare":
-                Image(card.name)
+                Image(card.imageName)
                     .resizable()
-                    .frame(width: 171, height: 247)
+                    .frame(width: 180, height: 247)
                     .cornerRadius(10)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(.blue, lineWidth: 5)
                     )
             default:
-                Image(card.name)
+                Image(card.imageName)
                     .resizable()
                     .frame(width: 171, height: 247)
                     .cornerRadius(10)
@@ -54,14 +54,18 @@ struct CardView: View {
                             .foregroundColor(.orange)
                         Image(systemName: "star.fill")
                             .foregroundColor(.orange)
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.orange)
                     case "Legendary":
                         Image(systemName: "star.fill")
-                            .foregroundColor(.orange)
+                            .foregroundColor(.purple)
                         Image(systemName: "star.fill")
-                            .foregroundColor(.orange)
+                            .foregroundColor(.purple)
                         Image(systemName: "star.fill")
-                            .foregroundColor(.orange)
+                            .foregroundColor(.purple)
                     default:
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.orange)
                         Image(systemName: "star.fill")
                             .foregroundColor(.orange)
                     }
@@ -71,6 +75,6 @@ struct CardView: View {
     }
 }
 
-//#Preview {
-//    CardView(card)
-//}
+#Preview {
+    CardView(card: CardModel(name: "kak khoi", role: "Figure", rarity: "Legendary", imageName: "kak khoi", pattern: "pattern1"))
+}

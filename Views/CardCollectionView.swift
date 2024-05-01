@@ -23,67 +23,63 @@ struct CardCollectionView: View {
     ]
     
     var body: some View {
-        ZStack {
-            Image("background")
-                .resizable()
-                .ignoresSafeArea()
-            
-            ScrollView(.vertical){
-//                if card.rarity == "Legendary" {
+        VStack {
+            Rectangle().frame(height: 1).foregroundColor(Color.clear)
+            ZStack {
+                Image("background")
+                    .resizable()
+                    .ignoresSafeArea()
+                
+                ScrollView(.vertical){
                     CardView(card: cardData[0]) // Steve Jobs
                         .padding(.bottom)
                         .onTapGesture {
                             Sounds.playSound(sound: "powerup3", type: "wav")
-                            showView[0].toggle()
-                        }
+                            showView[0].toggle()}
                         .sensoryFeedback(.success, trigger: isCardTapped)
-                
-                    .sheet(isPresented: $showView[0], content: {
-                        CardDetailView(card: cardData[0])})
-//                }
-                LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(cardData.indices, id: \.self) { index in
-                    let card = cardData[index]
-                    if card.rarity == "Super Rare" {
-                        CardView(card: card) // George
-                            .onTapGesture {
-                                Sounds.playSound(sound: "powerup1", type: "wav")
-                                showView[index].toggle()
-                            }
-                            .sensoryFeedback(.success, trigger: isCardTapped)
-                            .sheet(isPresented: $showView[index], content: {
-                                CardDetailView(card: card)})
-                    }
+                        .sheet(isPresented: $showView[0], content: {
+                            CardDetailView(card: cardData[0])})
                     
-                        if card.rarity == "Rare"  {
-                            CardView(card: card)
-                                .onTapGesture {
-                                    Sounds.playSound(sound: "powerup2", type: "wav")
-                                    showView[index].toggle()
-                                }
-                                .sensoryFeedback(.success, trigger: isCardTapped)
-                        .sheet(isPresented: $showView[index], content: {
-                            CardDetailView(card: card)})
+                    LazyVGrid(columns: columns, spacing: 16) {
+                        ForEach(cardData.indices, id: \.self) { index in
+                            let card = cardData[index]
+                            
+                            if card.rarity == "Super Rare" {
+                                CardView(card: card) // George
+                                    .onTapGesture {
+                                        Sounds.playSound(sound: "powerup1", type: "wav")
+                                        showView[index].toggle()}
+                                    .sensoryFeedback(.success, trigger: isCardTapped)
+                                    .sheet(isPresented: $showView[index], content: {
+                                        CardDetailView(card: card)})}
+                            
+                            if card.rarity == "Rare"  {
+                                CardView(card: card)
+                                    .onTapGesture {
+                                        Sounds.playSound(sound: "powerup2", type: "wav")
+                                        showView[index].toggle()}
+                                    .sensoryFeedback(.success, trigger: isCardTapped)
+                                    .sheet(isPresented: $showView[index], content: {
+                                        CardDetailView(card: card)})}
                         }
                     }
                 }
-                
+            }
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
+                        Image(systemName: "house.fill")
+                            .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
+                        
+                    }
+                }
             }
         }
-        .navigationBarBackButtonHidden(true)
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button(action: {
-                            dismiss()
-                        }) {
-                            Image(systemName: "chevron.backward")
-                                .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
-                            Image(systemName: "house.fill")
-                                .foregroundColor(Color(red: 0.95, green: 0.68, blue: 0))
-                            
-                        }
-                    }
-                }
     }
 }
 
