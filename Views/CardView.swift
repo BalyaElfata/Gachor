@@ -39,7 +39,7 @@ struct CardView: View {
                     .cornerRadius(10)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(.gray, lineWidth: 5)
+                            .stroke(.green, lineWidth: 5)
                     )
             }
             ZStack {

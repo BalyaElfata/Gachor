@@ -42,7 +42,7 @@ struct CardDetailView: View {
                     .cornerRadius(30)
                     .overlay(
                         RoundedRectangle(cornerRadius: 30)
-                            .stroke(.gray, lineWidth: 15)
+                            .stroke(.green, lineWidth: 15)
                     )
             }
         }
