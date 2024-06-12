@@ -94,9 +94,9 @@ struct HomeView: View {
             }
         }
 //         Play Music
-        .onAppear() {
-            Sounds.playMusic(music: "bgMusic", type: "mp3")
-        }
+//        .onAppear() {
+//            Sounds.playMusic(music: "bgMusic", type: "mp3")
+//        }
     }
 }
 

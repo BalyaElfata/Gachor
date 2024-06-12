@@ -52,21 +52,6 @@ struct LoadingView: View {
                 .onAppear{
                     startAnimationBar()
                 }
-                HStack {
-                    Text("Loading")
-                        .font(.custom("Chalkduster", size: 28))
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        .frame(width: 130)
-                        .foregroundColor(.orange)
-                    Text("\(textArray[currentIndex])")
-                        .font(.title)
-                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        .frame(width: 30)
-                        .foregroundColor(.orange)
-                        .onAppear{
-                            startAnimationText()
-                        }
-                }
             }
         }
     }
@@ -74,14 +59,6 @@ struct LoadingView: View {
         _ = Timer.scheduledTimer(withTimeInterval: 0.025, repeats: true){timer in
             withAnimation{
                 progressValue += 0.01
-            }
-        }
-    }
-    
-    func startAnimationText(){
-        _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true){timer in
-            withAnimation{
-                currentIndex = (currentIndex+1)%textArray.count
             }
         }
     }
